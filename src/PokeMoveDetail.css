@@ -1,0 +1,29 @@
+.pokemovedetail{
+  max-width: 30ch;
+  justify-self: center;
+  background-color: rgba(255,255,255,0.3);
+  width: 90%;
+  border-collapse: collapse;
+  border: 1px solid rgba(0,0,0,0.8)
+}
+
+.pokemovedetail thead{
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.pokemovedetail th{
+  border: 1px solid black;
+}
+
+.pokemovedetail td{
+  text-align: center;
+  border: 1px solid black;
+  background-color: rgba(255,255,255,0.3);
+  color: rgb(20,20,20)
+}
+
+.pokemovedetail tbody th{
+  text-align: left;
+  padding-left: 0.6em;
+}

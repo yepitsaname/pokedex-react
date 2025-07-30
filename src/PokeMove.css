@@ -1,0 +1,30 @@
+.pokemove-wrapper{
+  max-width: 31ch;
+}
+
+.pokemove{
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 1ch;
+  padding: 0.5ch;
+  margin: 0.25em;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  -webkit-text-stroke: 1px rgba(0,0,0,0.7);
+  font-weight: 800;
+  text-transform: capitalize;
+  width: 20ch;
+}
+
+.pokemove:hover{
+  border: 2px solid rgba(0,0,0,0.7);
+  border-color: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+
+.pokemove.default {
+  background-color: rgba(0,0,0,0.4);
+}
+
+.pokemove.default:hover {
+  background-color: rgba(0,0,0,0.05);
+}

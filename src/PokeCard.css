@@ -13,6 +13,11 @@
   position: relative;
 }
 
+.pokecard:hover{
+  cursor: pointer;
+  border-color: rgb(255, 255, 255)
+}
+
 .pokecard-wrapper{
   width: 164px;
   height: 205px;

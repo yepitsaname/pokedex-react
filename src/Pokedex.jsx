@@ -4,9 +4,10 @@ import './Pokedex.css'
 
 export default function Pokedex({setDetails}){
   const [list, setList] = useState([]);
+  const limit = 1;
 
   useEffect(()=>{
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=151")
+    fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}`)
       .then(response => {
         if( response.status == 200 ) { return response.json() }
         else{ throw new Error(response.status) }

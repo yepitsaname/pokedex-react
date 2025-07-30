@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Chart from './Utilities'
 import './PokeDetail.css'
+import PokeMove from "./PokeMove"
 
 export default function PokeDetail({details}){
   const [flavorText, setFlavorText] = useState('Loading')
@@ -29,9 +30,9 @@ export default function PokeDetail({details}){
       <p>{flavorText}</p>
       <p>Ht: {Math.round(details.height * 3.281) / 10}ft Wt: {Math.floor(details.weight * 2.205) / 10}lbs</p>
       <h3>Moves</h3>
-      <ul>
-        {details.moves.map( move => <li key={move.move.name}>{move.move.name.replace('-', ' ')}</li>)}
-      </ul>
+      <div className="pokemovelist">
+        {details.moves.map( move => <PokeMove key={move.move.name} move={move.move}/>)}
+      </div>
     </div>
   )
 }

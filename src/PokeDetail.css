@@ -6,7 +6,7 @@
 .banner{
   display: grid;
   grid-template: "image header chart" 1fr "image header chart" 1fr "image type chart" 0.5fr / 1fr 4fr 1fr;
-  width: 50vw;
+  width: 100%;
   height: 200px;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
 
 .banner-overlay{
   position: absolute;
-  width: 50vw;
+  width: 100%;
   height: 200px;
   -webkit-mask: linear-gradient(-30deg, #000, #0000);
   mask: linear-gradient(-30deg, #000, #0000);
@@ -72,18 +72,8 @@
   text-transform: capitalize;
 }
 
-.pokedetail li{
-  border: 2px solid rgba(0,0,0,0);
-  border-radius: 1ch;
-  padding: 0.5ch;
-  background-color: rgba(0,0,0,0.4);
-  margin: 0.25em;
-  font-size: 20px;
-  color: rgba(255,255,255,0.8);
-  /* -webkit-text-stroke: 1px rgba(0,0,0,0.7); */
-}
-
-.pokedetail li:hover{
-  border: 2px solid rgba(0,0,0,0.7);
-  border-color: rgba(255,255,255,0.7);
+.pokemovelist{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
