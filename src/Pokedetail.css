@@ -1,0 +1,89 @@
+.pokedetail{
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.banner{
+  display: grid;
+  grid-template: "image header chart" 1fr "image header chart" 1fr "image type chart" 0.5fr / 1fr 4fr 1fr;
+  width: 50vw;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.banner-overlay{
+  position: absolute;
+  width: 50vw;
+  height: 200px;
+  -webkit-mask: linear-gradient(-30deg, #000, #0000);
+  mask: linear-gradient(-30deg, #000, #0000);
+}
+
+.banner h3 {
+  grid-area: header;
+  font-size: 60px;
+  text-transform: capitalize;
+  margin: 0.5em;
+  padding: 0.5em;
+  position: relative;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+}
+
+.banner img {
+  grid-area: image;
+  width: 200px;
+  background-color: rgba(255,255,255,0.7);
+  padding: 1em;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  margin-left: 1em;
+  position: relative;
+}
+
+.type-wrapper {
+  grid-area: type;
+  display: inline;
+}
+
+.type {
+  width: 18ch;
+  display: inline-block;
+  margin: 0.4em;
+  padding: 0.4em;
+  text-align: center;
+  text-transform: uppercase;
+  border: 2px solid rgba(0,0,0,0.5);
+  border-radius: 2ch;
+  position: relative;
+  background-image: linear-gradient(-45deg,#777, #0000, #0000, #aaa, #ccc, #0000, #0000);
+  color: rgba(255,255,255,0.8);
+  font-size: 20px;
+  -webkit-text-stroke: 1px rgba(0,0,0,0.7);
+  font-weight: 700;
+}
+
+.pokedetail ul{
+  columns: 3;
+  list-style: none;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.pokedetail li{
+  border: 2px solid rgba(0,0,0,0);
+  border-radius: 1ch;
+  padding: 0.5ch;
+  background-color: rgba(0,0,0,0.4);
+  margin: 0.25em;
+  font-size: 20px;
+  color: rgba(255,255,255,0.8);
+  /* -webkit-text-stroke: 1px rgba(0,0,0,0.7); */
+}
+
+.pokedetail li:hover{
+  border: 2px solid rgba(0,0,0,0.7);
+  border-color: rgba(255,255,255,0.7);
+}

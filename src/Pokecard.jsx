@@ -25,6 +25,7 @@ export default function Pokecard({url, setDetails}){
 
   return (
     <div className={"pokecard " + pokeData.types[0].type.name} onClick={() => { setDetails(pokeData) }}>
+      <div className={"pokecard-wrapper " + (pokeData.types[1] ? pokeData.types[1].type.name : "")}></div>
       <img alt={pokeData.name} src={pokeData.sprites.front_default}></img>
       <h4>{pokeData.name}</h4>
     </div>

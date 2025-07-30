@@ -10,6 +10,22 @@
   border-left: 2px solid rgba(255,255,255,0.4);
   border-right: 2px solid rgba(0,0,0,0.5);
   border-bottom: 2px solid rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.pokecard-wrapper{
+  width: 164px;
+  height: 205px;
+  position: absolute;
+  /* mix-blend-mode: hard-light; */
+  z-index: 0;
+  top: -3px;
+  left: -2.5px;
+  border-top: 3px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.4);
+  border-right: 1px solid rgba(0,0,0,0.5);
+  -webkit-mask: linear-gradient(#ff0, #0000);
+   mask: linear-gradient(#ff0, #1111);
 }
 
 .pokecard img{
@@ -20,11 +36,13 @@
   border-left: 2px solid rgba(0,0,0,0.5);
   border-right: 2px solid rgba(255,255,255,0.5);
   border-bottom: 2px solid rgba(255,255,255,0.3);
+  position: relative;
 }
 
 .pokecard h4{
   margin-top: 0.6em;
   text-transform: capitalize;
+  position: relative;
 }
 
 .normal{
