@@ -1,4 +1,5 @@
 import{ useEffect, useState } from 'react';
+import './Pokecard.css';
 
 export default function Pokecard({url}){
   const [pokeData, setPokeData] = useState({});
@@ -9,10 +10,23 @@ export default function Pokecard({url}){
         if( response.status == 200 ) { return response.json() }
         else{ throw new Error(response.status) }
       })
-      .then( data => console.log(data) )
+      .then( data => setPokeData(data) )
       .catch( error => console.log(error) )
   },[])
 
+  if(Object.keys(pokeData).length < 1){
+    return (
+      <div className="pokecard">
+        <img alt='loading' src='/src/img/loading-spinner.gif'></img>
+        <h4>LOADING</h4>
+      </div>
+    )
+  }
 
-  return <div>POKECARD</div>
+  return (
+    <div className={"pokecard " + pokeData.types[0].type.name}>
+      <img alt={pokeData.name} src={pokeData.sprites.front_default}></img>
+      <h4>{pokeData.name}</h4>
+    </div>
+  )
 }
