@@ -1,7 +1,7 @@
 import{ useEffect, useState } from 'react';
 import './Pokecard.css';
 
-export default function Pokecard({url}){
+export default function Pokecard({url, setDetails}){
   const [pokeData, setPokeData] = useState({});
 
   useEffect(()=>{
@@ -24,7 +24,7 @@ export default function Pokecard({url}){
   }
 
   return (
-    <div className={"pokecard " + pokeData.types[0].type.name}>
+    <div className={"pokecard " + pokeData.types[0].type.name} onClick={() => { setDetails(pokeData) }}>
       <img alt={pokeData.name} src={pokeData.sprites.front_default}></img>
       <h4>{pokeData.name}</h4>
     </div>
