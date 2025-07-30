@@ -1,7 +1,11 @@
-function App() {
+import { useEffect, useState } from "react"
+import Pokedex from "./Pokedex"
 
+function App() {
   return (
     <>
+      <h1>Pokedex</h1>
+      <Pokedex/>
     </>
   )
 }
