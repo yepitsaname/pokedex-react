@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Pokedex from "./Pokedex"
 import './App.css';
-import Pokedetail from "./Pokedetail";
+import PokeDetail from "./PokeDetail";
 
 function App() {
   const [details, setDetails] = useState({})
@@ -10,7 +10,7 @@ function App() {
     <>
       <h1>Pokedex</h1>
       <button onClick={()=>{setDetails({})}}>HOME</button>
-      {Object.keys(details).length < 1 ? <Pokedex setDetails={setDetails}/> : <Pokedetail details={details}/>}
+      {Object.keys(details).length < 1 ? <Pokedex setDetails={setDetails}/> : <PokeDetail details={details}/>}
     </>
   )
 }

@@ -1,7 +1,7 @@
 import{ useEffect, useState } from 'react';
-import './Pokecard.css';
+import './PokeCard.css';
 
-export default function Pokecard({url, setDetails}){
+export default function PokeCard({url, setDetails}){
   const [pokeData, setPokeData] = useState({});
 
   useEffect(()=>{

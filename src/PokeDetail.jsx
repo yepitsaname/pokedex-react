@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import Chart from './Utilities'
-import './Pokedetail.css'
+import './PokeDetail.css'
 
-export default function Pokedetail({details}){
+export default function PokeDetail({details}){
   const [flavorText, setFlavorText] = useState('Loading')
 
   useEffect(()=>{

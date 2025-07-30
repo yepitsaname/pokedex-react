@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Pokecard from "./Pokecard";
+import PokeCard from "./PokeCard";
 import './Pokedex.css'
 
 export default function Pokedex({setDetails}){
@@ -17,7 +17,7 @@ export default function Pokedex({setDetails}){
 
   return (
     <div className="pokedex">
-      {list.map( pokemon => <Pokecard key={pokemon.name} url={pokemon.url} setDetails={setDetails} />)}
+      {list.map( pokemon => <PokeCard key={pokemon.name} url={pokemon.url} setDetails={setDetails} />)}
     </div>
   )
 }
