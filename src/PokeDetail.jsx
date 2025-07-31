@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
-import Chart from './Utilities'
 import './PokeDetail.css'
 import PokeMove from "./PokeMove"
+import PokeRadarChart from "./PokeRadarChart"
 
 export default function PokeDetail({details}){
   const [flavorText, setFlavorText] = useState('Loading')
@@ -25,8 +25,8 @@ export default function PokeDetail({details}){
         <div className="type-wrapper">
           {details.types.map( type => <p key={`${details.name}-poketype-${type.type.name}`} className={`type ${type.type.name}`}>{type.type.name}</p>)}
         </div>
+        <PokeRadarChart stats={details.stats}/>
       </div>
-      {/* <div>{Chart.drawHexChart(255, [0,0,0,0,0,0])}</div> */}
       <p>{flavorText}</p>
       <p>Ht: {Math.round(details.height * 3.281) / 10}ft Wt: {Math.floor(details.weight * 2.205) / 10}lbs</p>
       <h3>Moves</h3>

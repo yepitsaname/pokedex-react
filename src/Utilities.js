@@ -22,10 +22,10 @@ export default class Chart {
     return angle * (Math.PI / 180);
   }
 
-  static drawHexChart(distance, points){
-    const canvas = document.createElement('canvas');
-    canvas.height = distance * 2;
-    canvas.width = distance * 2;
+  static drawHexChart(canvas, distance, points){
+    canvas.height = distance * 2.5;
+    canvas.width = distance * 2.5;
+    let offset = distance * 1.25
     const context = canvas.getContext('2d');
 
     function drawFrame( distance, distanceMod = 1 ){
@@ -38,8 +38,8 @@ export default class Chart {
       if( distance * distanceMod == 0 ){
         context.beginPath();
         for(let angle = 0; angle <= 300; angle += 60){
-          context.moveTo(...Chart.getCoordinate(0,angle,100))
-          context.lineTo(...Chart.getCoordinate(distance,angle,100))
+          context.moveTo(...Chart.getCoordinate(0,angle,offset))
+          context.lineTo(...Chart.getCoordinate(distance,angle,offset))
         }
         context.closePath();
         context.stroke();
@@ -48,19 +48,29 @@ export default class Chart {
       // Draw current modified outer frame
       context.beginPath();
       for(let angle = 0; angle <= 300; angle += 60){
-        context.lineTo(...Chart.getCoordinate(distance * distanceMod,angle,100))
+        context.lineTo(...Chart.getCoordinate(distance * distanceMod,angle,offset))
       }
       context.closePath();
       context.stroke();
     }
-
-    function drawData( points ){
-
-    }
-
     drawFrame( distance );
 
+    context.beginPath();
+    for(let i = 0; i <= 5; i++ ){
+      let angle = -180 + i * 60
+      context.lineTo(...Chart.getCoordinate(points[i][0],angle,offset))
+    }
+    context.closePath();
+    context.fillStyle = 'rgba(20,20,150, 0.5)';
+    context.fill();
+    context.stroke();
 
-    return canvas;
+    context.fillStyle = 'black';
+    for(let i = 0; i <= 5; i++ ){
+      let angle = -180 + i * 60
+      angle == -180 || angle == 0 ? context.textAlign = "center" :  angle <= -60 ? context.textAlign = "right" : context.textAlign = "left"
+      context.fillText(points[i][1],...Chart.getCoordinate(distance + 10,angle,offset) )
+    }
+    context.stroke();
   }
 }
